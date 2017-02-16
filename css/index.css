@@ -1,0 +1,16 @@
+html,body,div,ul,li,dl,dd,dt,p,h3,input,fieldset,label{ margin:0; padding:0; font-size:14px; font-family:"宋体",serif;}
+img{border:none;}
+ul{list-style:none;}
+a{text-decoration: none;}
+input,textarea{outline:none;}
+table{ border-collapse:collapse; border-spacing: 0; }
+/* remember to define focus styles! */
+:focus{ outline:0 none; }
+/* remember to highlight inserts somehow! */
+ins{ text-decoration:none; }
+del{ text-decoration:line-through; }
+
+.input {width:198px;height:28px;line-height: 28px;text-indent:10px;}
+.ul {margin:0 0 0 20px;}
+.ul li {margin:30px 0 0 0;}
+.ul label {display: block;height:30px;line-height: 30px;}

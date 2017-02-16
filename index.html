@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="dist/calendar.css"/>
+</head>
+<body>
+<ul class="ul">
+    <li>
+        <label>限制可选范围(2017-1-1,2017-5-1)，默认日期2017-2-1，日期格式mm/dd/yyyy</label>
+        <input class="input" type="text" id="tb1"/>
+    </li>
+    <li>
+        <label>限制可选范围(2017-1-1,2017-5-1)</label>
+        <input class="input" type="text" id="tb2"/>
+    </li>
+    <li>
+        <label>无限制可选范围，默认当前日期</label>
+        <input class="input" type="text" id="tb3"/>
+    </li>
+    <li>
+        <label>设置关联起始日期和终止日期，语义化设置，开始可选日期从当前日期开始，日期跨度限制为一个星期</label>
+        <input class="input" type="text" id="tb4"/> -
+        <input class="input" type="text" id="tb5"/>
+    </li>
+</ul>
+
+<script type="text/javascript" src="scripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="dist/jquery.calendar.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $tb1 = $("#tb1"), $tb2 = $("#tb2"), $tb3 = $("#tb3"), $tb4 = $("#tb4"), $tb5 = $("#tb5");
+        $tb1.calendar({
+            from: "2017-1-1",
+            to: "2017-5-1",
+            def: "2017-2-1",
+            format: "mm/dd/yyyy"
+        });
+        $tb2.calendar({
+            from: "2017-1-1",
+            to: "2017-5-1"
+        });
+        $tb3.calendar({
+            def: "n"
+        });
+        // n-当前日期 f-起始日期 m-月份 y-年 w-星期 d-天
+        $tb4.calendar({
+            from: "n",
+            end: $tb5
+        });
+        $tb5.calendar({
+            to: "f+w",
+            start: $tb4
+        });
+    });
+</script>
+</body>
+</html>
